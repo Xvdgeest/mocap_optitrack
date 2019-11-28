@@ -1,0 +1,21 @@
+#
+# Definition of all trackable objects
+# Identifier corresponds to Trackable ID set in Tracking Tools
+#
+rigid_bodies:
+    '1':
+        pose: ego_pose
+        #pose2d: rigid_body_1/ground_pose
+        parent_frame_id: map
+        child_frame_id: ego_pose
+
+#Use this format to create each new rigid body
+
+    '2':
+        pose: red
+        #pose2d: rigid_body_1/ground_pose
+        parent_frame_id: map
+        child_frame_id: red
+
+optitrack_config:
+       multicast_address: 224.0.0.1

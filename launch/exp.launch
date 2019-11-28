@@ -1,19 +1,22 @@
 <launch>
 
   <!-- Pass in mocap_config_file:=/path/to/config.yaml to change options. -->
-  <arg name="mocap_config_file"
-       default="$(find mocap_optitrack)/config/two_cars.yaml" />
+  <arg name="mocap_config_file" default="$(find mocap_optitrack)/config/exp.yaml" />
 
   <node pkg="mocap_optitrack"
-        type="mocap_node"
-        name="mocap_node"
-        required="true">
-	<rosparam file="$(arg mocap_config_file)" command="load" />
+	type="mocap_node"
+	name="mocap_node"
+	required="true">
+  <rosparam file="$(arg mocap_config_file)" command="load" />
   </node>
 
-  <!--<node type="rviz" name="rviz" pkg="rviz" args="-d $(find datmo)/config/live_experiment.rviz" />-->
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find mocap_optitrack)/config/experiment.rviz" />
 
-  <!--<node pkg="rosbag" type="record" name="recorder" output="screen" args="-O /home/kostas/experiments/exp.bag /scan /tf /ego_pose /red_pose" />-->
+  <node pkg="rosbag" type="record" name="recorder" output="screen" args="-O /home/kostas/experiments/dsv/circular.bag /scan /ego_pose /red_pose /wheel_speeds /tf" />
+
+  <!--<node pkg="tf2_ros" type="static_transform_publisher" name="link_imu" args="0 0 0 0 0 0 /base_link /imu_link" />-->
+  <!--<node pkg="tf2_ros" type="static_transform_publisher" name="link_laser" args="-0.385 0 0 0 0 0 /ego_pose /laser" />-->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="link_laser" args="0 0 0 -1.56 0 0 /ego_pose /laser" />
   
   <!--<include file="$(find localization)/launch/mocap_localization.launch"/>-->
 
