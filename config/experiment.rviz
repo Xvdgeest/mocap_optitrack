@@ -62,13 +62,17 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_link:
+          Value: true
         ego_pose:
+          Value: true
+        imu_link:
           Value: true
         laser:
           Value: true
         map:
           Value: true
-        red:
+        red_pose:
           Value: true
       Marker Scale: 1.5
       Name: TF
@@ -80,7 +84,7 @@ Visualization Manager:
           ego_pose:
             laser:
               {}
-          red:
+          red_pose:
             {}
       Update Interval: 0
       Value: true
@@ -115,7 +119,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.05000000074505806
+      Size (m): 0.029999999329447746
       Style: Flat Squares
       Topic: /scan
       Unreliable: false
@@ -126,7 +130,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: laser
     Frame Rate: 30
   Name: root
   Tools:
@@ -150,25 +154,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 108.96231842041016
+      Distance: 110.56328582763672
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.4331343472003937
-        Y: 0.17356914281845093
-        Z: -103.36595916748047
+        X: 2.6181278228759766
+        Y: -0.7654308080673218
+        Z: -103.33892822265625
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 1.5647963285446167
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.6922712326049805
+      Yaw: 3.2541069984436035
     Saved: ~
 Window Geometry:
   Displays:

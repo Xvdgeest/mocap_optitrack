@@ -12,7 +12,7 @@ rigid_bodies:
 #Use this format to create each new rigid body
 
     '2':
-        pose: red_rose
+        pose: red_pose
         #pose2d: rigid_body_1/ground_pose
         parent_frame_id: map
         child_frame_id: red_pose
